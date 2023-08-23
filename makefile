@@ -29,15 +29,14 @@ CPPFLAGS += -isystem
 CXXFLAGS += --std=c++1414 -g -Wall -Wextra -pthread
 
 TARGET = main
-
+INPUT = $(SRC_DIR)/main.cpp
 # House-keeping build targets.
 
 all : main
 
-main : $(SRC_DIR)/main.cpp
+main : $(INPUT)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -lpthread $^ -o $@
 
 clean :
 	# Cleaning intermediate and output files ($(TARGET))
-	rm $(TARGET) 
-# rm -f $(TARGET) gtest.a gtest_main.a *.o *.exe
+	rm $(TARGET) *.o *.exe
