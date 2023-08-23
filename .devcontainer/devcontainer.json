@@ -1,0 +1,198 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/cpp
+{
+	"name": "C++ Dev Container UCD CSCI 2312",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+	"features": {
+		"ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
+			"packages": "curl,nano"
+		},
+		"ghcr.io/devcontainers-contrib/features/apt-get-packages:1": {
+			"clean_ppas": true,
+			"preserve_apt_list": true,
+			"packages": "build-essential",
+			"ppas": "ppa:deadsnakes/ppa"
+		},
+		"ghcr.io/devcontainers-contrib/features/bash-command:1": {
+			"command": "echo hi!"
+		},
+        "ghcr.io/jungaretti/features/make:1": {},
+        "ghcr.io/balazs23/devcontainers-features/bazel:1": {}
+	},
+    "customizations": {
+        "vscode": {
+            "extensions": [
+				"ms-vscode.cpptools",
+				"ms-vscode.hexeditor",
+				"ms-vsliveshare.vsliveshare",
+				"vsls-contrib.gitdoc",
+				"Gruntfuggly.todo-tree",
+				"bierner.markdown-mermaid",
+				"ms-vscode.makefile-tools"
+			],
+            "settings": {
+                "breadcrumbs.enabled": false,
+                "C_Cpp.autocomplete": "disabled",
+                "C_Cpp.clang_format_fallbackStyle": "{ AllowShortFunctionsOnASingleLine: Empty, BraceWrapping: { AfterCaseLabel: true, AfterControlStatement: true, AfterFunction: true, AfterStruct: true, BeforeElse: true, BeforeWhile: true }, BreakBeforeBraces: Custom, ColumnLimit: 132, IndentCaseLabels: true, IndentWidth: 4, SpaceAfterCStyleCast: true, TabWidth: 4 }", /* https://clang.llvm.org/docs/ClangFormatStyleOptions.html */
+                "C_Cpp.codeFolding": "disabled",
+                "C_Cpp.debugShortcut": false,
+                "C_Cpp.dimInactiveRegions": false,
+                "C_Cpp.doxygen.generateOnType": false,
+                "C_Cpp.enhancedColorization": "enabled",
+                "C_Cpp.errorSquiggles": "disabled",
+                "C_Cpp.formatting": "clangFormat",
+                "diffEditor.diffAlgorithm": "advanced",
+                "diffEditor.ignoreTrimWhitespace": false,
+                "editor.autoClosingQuotes": "never",
+                "editor.colorDecorators": false,
+                "editor.emptySelectionClipboard": false,
+                "editor.folding": false,
+                "editor.foldingHighlight": false,
+                "editor.formatOnSave": false,
+                "editor.guides.indentation": false,
+                "editor.hover.enabled": false,
+                "editor.lightbulb.enabled": false,
+                "editor.matchBrackets": "never",
+                "editor.minimap.enabled": false,
+                "editor.occurrencesHighlight": false,
+                "editor.parameterHints.enabled": false,
+                "editor.quickSuggestions": {
+                    "other": "off",
+                    "comments": "off",
+                    "strings": "off"
+                },
+                "editor.renderWhitespace": "selection",
+                "editor.selectionHighlight": false,
+                "editor.semanticTokenColorCustomizations": {
+                    "[GitHub Dark Default]": {
+                        "rules": {
+                            "type": "#FF7E76"
+                        }
+                    },
+                    "[GitHub Light Default]": {
+                        "rules": {
+                            "type": "#D2343F"
+                        }
+                    }
+                },
+                "editor.suggestOnTriggerCharacters": false,
+                "extensions.ignoreRecommendations": true,
+                "explorer.compactFolders": false,
+                "extension-uninstaller.uninstall": [
+                    "Codeium.codeium",
+                    "Codeium.codeium-enterprise-updater",
+                    "github.copilot",
+                    "github.copilot-nightly",
+                    "ms-toolsai.vscode-jupyter-cell-tags",
+                    "tabnine.tabnine-vscode"
+                ],
+                "files.autoSave": "afterDelay",
+                "files.exclude": {
+                    "**/.*": true
+                },
+                "files.trimTrailingWhitespace": true,
+                "files.watcherExclude": {
+                    "**/.git/objects/**": true,
+                    "**/.git/subtree-cache/**": true,
+                    "**/node_modules/*/**": true
+                },
+                "git.autofetch": true, /* Disable "Would you like Code to periodically run 'git fetch'?" toast */
+                "github.codespaces.devcontainerChangedNotificationStyle": "none",
+                "git.decorations.enabled": false,
+                "git.terminalAuthentication": true,
+                "github.gitAuthentication": true,
+                "gitdoc.autoPull": "off",
+                "gitdoc.enabled": true,
+                "gitdoc.commitMessageFormat": "ccc, LLL d, kkkk, h:mm a ZZ",
+                "gitdoc.commitValidationLevel": "none",
+                "gitdoc.pullOnOpen": false,
+                "remote.otherPortsAttributes": {
+                    "onAutoForward": "silent"
+                },
+                "scm.countBadge": "off",
+                "terminal.integrated.commandsToSkipShell": [
+                    "workbench.action.toggleSidebarVisibility"
+                ],
+                "terminal.integrated.enableBell": true,
+                "terminal.integrated.defaultProfile.linux": "bash",
+                "terminal.integrated.gpuAcceleration": "off",
+                "terminal.integrated.profiles.linux": {
+                    "bash": {
+                        "args": [
+                            "--login"
+                        ],
+                        "icon": "terminal",
+                        "path": "bash"
+                    },
+                    "JavaScript Debug Terminal": null
+                },
+                "terminal.integrated.persistentSessionReviveProcess": "never",
+                "terminal.integrated.sendKeybindingsToShell": true,
+                "terminal.integrated.shellIntegration.enabled": true,
+                "terminal.integrated.shellIntegration.decorationsEnabled": "never", /* Remove decoration for each command */
+                "terminal.integrated.tabs.description": "${task}${separator}${local}", /* Remove cwdFolder from description */
+                "terminal.integrated.tabs.showActiveTerminal": "never",
+                "window.autoDetectColorScheme": true,
+                "workbench.colorCustomizations": {
+                    "editor.lineHighlightBorder": "#0000", /* Disable gray border-{bottom,top} on active line */
+                    "editorError.foreground": "#0000", /* Disable red squiggles */
+                    "editorWarning.foreground": "#0000", /* Disable yellow squiggles */
+                    "editorGutter.addedBackground": "#0000",
+                    "editorGutter.deletedBackground": "#0000",
+                    "editorGutter.modifiedBackground": "#0000", /* Disable yellow bars to left of lines modified since last commit */
+                    "[GitHub Dark Default]": {
+                        "activityBar.background": "#000",
+                        "editor.background": "#000",
+                        "editor.lineHighlightBackground": "#0000",
+                        "editor.lineHighlightBorder": "#0000",
+                        "editorWhitespace.foreground": "#59A5FC",
+                        "panel.background": "#000",
+                        "sideBar.background": "#000",
+                        "terminal.foreground": "#fff",
+                        "terminal.background": "#000"
+                    },
+                    "[GitHub Light Default]": {
+                        "activityBar.background": "#fff",
+                        "editor.background": "#fff",
+                        "editor.lineHighlightBackground": "#fff0",
+                        "editor.lineHighlightBorder": "#fff0",
+                        "editorWhitespace.foreground": "#1167D7",
+                        "panel.background": "#fff",
+                        "sideBar.background": "#fff",
+                        "terminal.foreground": "#000",
+                        "terminal.background": "#fff"
+                    }
+                },
+                "window.commandCenter": false,
+                "workbench.editorAssociations": {
+                    "*.wav": "vscode.audioPreview"
+                },
+                "workbench.editor.closeOnFileDelete": true,
+                "workbench.editor.enablePreview": false,
+                "workbench.editor.untitled.hint": "hidden",
+                "workbench.iconTheme": "vs-minimal", /* Simplify icons */
+                "workbench.startupEditor": "none",
+                "workbench.statusBar.visible": false,
+                "workbench.tips.enabled": false,
+                "workbench.welcomePage.walkthroughs.openOnInstall": false
+            }
+        }
+    }
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "gcc -v",
+
+	// Configure tool-specific properties.
+	// "customizations": {},
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}
