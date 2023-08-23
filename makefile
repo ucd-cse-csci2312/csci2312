@@ -29,7 +29,7 @@ CPPFLAGS += -isystem
 CXXFLAGS += --std=c++1414 -g -Wall -Wextra -pthread
 
 TARGET = main
-INPUT = $(SRC_DIR)/main.cpp
+INPUT = $(SRC_DIR)/main.cpp $(SRC_DIR)/something.cpp
 # House-keeping build targets.
 
 all : main
