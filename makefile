@@ -1,4 +1,4 @@
-# Make file for CSCI 2312
+# Make file for CSCI 2312 
 
 # Please feel free to explore these commands and their options.
 
@@ -21,6 +21,9 @@
 # project, except GTEST_HEADERS, which you can use in your own targets
 # but shouldn't modify.
 
+# Points to the root of Google Test, relative to where this file is.
+# Remember to tweak this if you move this file.
+GTEST_DIR = ./tests/googletest
 
 # Where to find user code.
 USER_DIR = ./src
