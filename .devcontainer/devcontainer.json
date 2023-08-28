@@ -27,7 +27,6 @@
 				"ms-vscode.cpptools",
 				"ms-vscode.hexeditor",
 				"ms-vsliveshare.vsliveshare",
-				"vsls-contrib.gitdoc",
 				"Gruntfuggly.todo-tree",
 				"bierner.markdown-mermaid",
 				"ms-vscode.makefile-tools"
@@ -103,11 +102,6 @@
                 "git.decorations.enabled": false,
                 "git.terminalAuthentication": true,
                 "github.gitAuthentication": true,
-                "gitdoc.autoPull": "off",
-                "gitdoc.enabled": true,
-                "gitdoc.commitMessageFormat": "ccc, LLL d, kkkk, h:mm a ZZ",
-                "gitdoc.commitValidationLevel": "none",
-                "gitdoc.pullOnOpen": false,
                 "remote.otherPortsAttributes": {
                     "onAutoForward": "silent"
                 },
